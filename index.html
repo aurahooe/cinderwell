@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cinderwell</title>
+  <meta name="description" content="A public well of notes. The edition turns every hour." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="ember" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="mark" href="#/">
+      <span class="well"></span>
+      Cinderwell
+    </a>
+    <nav>
+      <a href="#/wall">Wall</a>
+      <a href="#/desk">Desk</a>
+      <button id="authBtn" type="button">Sign in</button>
+    </nav>
+  </header>
+
+  <main id="view"></main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="sheet">
+      <button class="x" id="closeModal" type="button" aria-label="Close">×</button>
+      <h2 id="modalTitle">Welcome back</h2>
+      <p class="hint">Magic link. No passwords stored here.</p>
+      <form id="authForm">
+        <label>
+          Email
+          <input id="email" type="email" required autocomplete="email" placeholder="you@somewhere.tld" />
+        </label>
+        <button type="submit">Send the link</button>
+      </form>
+      <p id="authMsg" class="msg"></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
